@@ -1,17 +1,16 @@
 import React from "react";
 
-const AllEmails = ({ emails }) => {
+const AllEmails = ({ emails, OnClick }) => {
   return (
-    <ol>
+    <row>
       {emails.map(email => {
         return (
-          <li key={`${email.id}-${email.message}`} >
-            Subject: {email.subject}
-            <br />
-            From: {email.sender}
-          </li>)
+          <span key={email.id} value={email.id} onClick={OnClick}>
+            <h3>Subject: {email.subject} </h3>
+            <p>From: {email.sender} </p>
+          </span>)
       })}
-    </ol>
+    </row>
   )
 
 }
